@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to Github
         uses: JamesIves/github-pages-deploy-action@4.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
+          GITHUB_TOKEN: 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
         with:
           branch: build # 打包的内容放到build分支下
           folder: docs-dist
