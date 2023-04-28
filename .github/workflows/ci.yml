@@ -35,5 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
         with:
-          branch: build # 打包的内容放到build分支下
-          folder: docs-dist
+          # 部署到 s-pages 分支
+          target_branch: s-pages # 打包的内容放到build分支下
+          # 部署目录的默认输出目录
+          build_dir: docs-dist
