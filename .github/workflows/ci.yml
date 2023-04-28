@@ -31,7 +31,7 @@ jobs:
 
       # 部署到github
       - name: Deploy to Github
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+        uses: crazy-max/ghaction-github-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
         with:
