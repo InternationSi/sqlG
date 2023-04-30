@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:52:25
  * @LastEditors: sfy
- * @LastEditTime: 2023-04-28 18:03:19
+ * @LastEditTime: 2023-04-30 14:57:59
  * @FilePath: /sqlG/.dumirc.ts
  * @Description: update here
  */
@@ -13,5 +13,8 @@ export default defineConfig({
   themeConfig: {
     name: 'sqlG',
   },
-  base: '/sqlG'
+  base: '/sqlG/',
+  mfsu: false,
+  resolve: { entryFile: './src/index.ts' },
+  publicPath: '/sqlG/',
 });
