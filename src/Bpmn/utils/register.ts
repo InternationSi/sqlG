@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-04-26 23:14:29
+ * @LastEditTime: 2023-05-01 00:07:33
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
@@ -102,4 +102,41 @@ export const register = () => {
     },
     true,
   )
+}
+
+export const behavior = (graph: Graph) => {
+  console.log(graph, '==');
+
+  graph.on('cell:mouseenter', ({ cell }) => {
+    console.log('cell: ', cell);
+     
+    if (cell.isNode()) {
+      cell.addTools([
+        {
+          name: 'boundary',
+          args: {
+            attrs: {
+              fill: '#7c68fc',
+              stroke: '#333',
+              'stroke-width': 1,
+              'fill-opacity': 0.2,
+            },
+          },
+        },
+        {
+          name: 'button-remove',
+          args: {
+            x: 0,
+            y: 0,
+            offset: { x: 10, y: 10 },
+          },
+        },
+      ])
+    } else {
+      cell.addTools(['vertices', 'segments'])
+    }
+  })
+  graph.on('cell:mouseleave', ({ cell }) => {
+    cell.removeTools()
+  })
 }

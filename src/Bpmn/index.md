@@ -2,10 +2,43 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:56:57
  * @LastEditors: sfy
- * @LastEditTime: 2023-04-26 22:59:17
+ * @LastEditTime: 2023-05-01 00:08:44
  * @FilePath: /sqlG/src/Bpmn/index.md
  * @Description: update here
 -->
+
+
+## eventNode
+
+```jsx
+import { useRef, useEffect } from 'react';
+import { Graph } from '@antv/x6'
+import {registerEventNode  } from './register'
+import {behavior} from './utils'
+export default () => {
+
+  const con = useRef();
+
+  useEffect(() => {
+    registerEventNode()
+    const graph = new Graph({
+      width: 400,
+      height: 400,
+      container: con.current,
+      grid: true,
+    })
+
+    graph.addNode({
+      x: 200,
+      y: 160,
+      shape: 'event',
+    })
+    behavior(graph)
+  }, [])
+
+  return <div ref={con} />
+}
+```
 
 
 ## BPMN

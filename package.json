@@ -24,7 +24,14 @@
   "files": [
     "dist"
   ],
-
+  "homepage": "https://internationsi.github.io/sqlG",
+  "bugs": {
+    "url": "https://github.com/InternationSi/sqlG/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InternationSi/sqlG"
+  },
   "publishConfig": {
     "access": "public"
   },
