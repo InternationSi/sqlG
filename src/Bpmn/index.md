@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:56:57
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-01 00:08:44
+ * @LastEditTime: 2023-05-02 21:23:47
  * @FilePath: /sqlG/src/Bpmn/index.md
  * @Description: update here
 -->
@@ -46,7 +46,7 @@ export default () => {
 This is an example component.
 
 ```jsx
-import { Bpmn } from 'sqlG';
+import  Bpmn  from './index.tsx';
 
 export default () => {
 

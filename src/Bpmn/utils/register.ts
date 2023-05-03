@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-01 00:07:33
+ * @LastEditTime: 2023-05-02 23:38:32
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
@@ -105,38 +105,50 @@ export const register = () => {
 }
 
 export const behavior = (graph: Graph) => {
-  console.log(graph, '==');
 
-  graph.on('cell:mouseenter', ({ cell }) => {
+  const clearTools = () => {
+    const nodes = graph.getNodes()
+    nodes.forEach(node => {
+      node.removeTools()
+    })
+  }
+
+  graph.on('cell:click', ({ cell }) => {
     console.log('cell: ', cell);
-     
+    clearTools()
     if (cell.isNode()) {
-      cell.addTools([
-        {
-          name: 'boundary',
-          args: {
-            attrs: {
-              fill: '#7c68fc',
-              stroke: '#333',
-              'stroke-width': 1,
-              'fill-opacity': 0.2,
-            },
-          },
-        },
-        {
-          name: 'button-remove',
-          args: {
-            x: 0,
-            y: 0,
-            offset: { x: 10, y: 10 },
-          },
-        },
-      ])
-    } else {
-      cell.addTools(['vertices', 'segments'])
-    }
+      // cell.addTools([
+      //   {
+      //     name: 'boundary',
+      //     args: {
+      //       attrs: {
+      //         fill: '#7c68fc',
+      //         stroke: '#333',
+      //         'stroke-width': 1,
+      //         'fill-opacity': 0.2,
+      //       },
+      //     },
+      //   },
+      //   {
+      //     name: 'button-remove',
+      //     args: {
+      //       x: 0,
+      //       y: 0,
+      //       offset: { x: 10, y: 10 },
+      //     },
+      //   },
+      // ])
+      cell.addTools({
+        name: 'sam-button',
+        args: {
+        }
+      })
+    } 
   })
-  graph.on('cell:mouseleave', ({ cell }) => {
-    cell.removeTools()
+  graph.on('blank:click', ({ e }) => {
+    console.log(e, '222');
+    
+    clearTools()
+    // cell.removeTools()
   })
 }

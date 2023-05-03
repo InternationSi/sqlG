@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:55:56
  * @LastEditors: sfy
- * @LastEditTime: 2023-04-26 23:17:31
+ * @LastEditTime: 2023-05-02 21:31:41
  * @FilePath: /sqlG/src/Bpmn/index.tsx
  * @Description: update here
  */
@@ -17,6 +17,8 @@ const Bpmn: FC<{ title: string }> = () => {
   const { graph, container } = useGraph()
   
   useEffect(() => {
+    console.log(graph, 'graph');
+        
     if(!graph) return
     const cells: Cell[] = []
     dataSource.forEach((item: any) => {
@@ -28,7 +30,8 @@ const Bpmn: FC<{ title: string }> = () => {
     })
     graph.resetCells(cells)
   }, [graph])
-  return <div ref={container} style={{ width: '800px', height: '800px' }}></div>
+  
+  return <div ref={container} ></div>
 };
 
 export default Bpmn;

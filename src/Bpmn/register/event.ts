@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-30 23:52:04
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-01 00:07:10
+ * @LastEditTime: 2023-05-02 16:18:04
  * @FilePath: /sqlG/src/Bpmn/register/event.ts
  * @Description: update here
  */
@@ -19,7 +19,7 @@ export const registerEventNode = () => {
       attrs: {
         body: {
           strokeWidth: 2,
-          stroke: '#5F95FF',
+          stroke: '#000',
           fill: '#FFF',
         },
       },
