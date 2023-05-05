@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-02 23:38:32
+ * @LastEditTime: 2023-05-05 23:18:14
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
@@ -151,4 +151,15 @@ export const behavior = (graph: Graph) => {
     clearTools()
     // cell.removeTools()
   })
+
+  graph.on("node:move", ({ e, x, y, node, view }) => {
+    console.log('node: ', node);
+    console.log('e: ', e);
+    const oldCell = graph.createNode(node)
+
+    graph.removeConnectedEdges(node)
+    oldCell.id = 'aefafe'
+     graph.addNode(oldCell)
+     console.log('oldCell: ', oldCell);
+  });
 }

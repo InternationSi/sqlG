@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:06:07
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-02 23:37:01
+ * @LastEditTime: 2023-05-05 23:02:59
  * @FilePath: /sqlG/src/Bpmn/effect/useGraph.ts
  * @Description: update here
  */
@@ -29,6 +29,9 @@ export const useGraph = () => {
       connecting: {
         router: 'orth',
       },
+      interacting: {
+        // nodeMovable: false,
+      }
     })
     setGraph(g)
     behavior(g)

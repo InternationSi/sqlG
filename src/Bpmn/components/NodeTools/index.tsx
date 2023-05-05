@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-05-03 15:29:17
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-03 16:15:00
+ * @LastEditTime: 2023-05-05 22:47:55
  * @FilePath: /sqlG/src/Bpmn/components/NodeTools/index.tsx
  * @Description: update here
  */
@@ -24,9 +24,12 @@ const useStyles = createUseStyles({
     borderRadius: '5px'
   },
   'list': {
-    marginLeft: (props) => {
-      return props.width+ 10 + 'px'
-    },
+    // marginLeft: (props) => {
+    //   return props.width+ 20 + 'px'
+    // },
+  },
+  'tool-render': {
+    display:'flex'
   }
 
 })
@@ -38,10 +41,9 @@ export function NodeTools(props) {
   const classes = useStyles(props.rectangle)
 
   return (
-    <>
-    <div className={classes['tool-box']}>
-    </div>
+    <div className={classes['tool-render']}>
+     <div className={classes['tool-box']} />
      <div className={classes['list']}><EventsSvg  /> <TaskSvg /></div>
-     </>
+     </div>
   )
 }
