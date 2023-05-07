@@ -2,12 +2,13 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-05 23:18:14
+ * @LastEditTime: 2023-05-07 17:33:41
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
 
-import { Graph,  } from '@antv/x6'
+import { Graph, Shape,  } from '@antv/x6'
+import _ from 'lodash'
 export const register = () => {
 
   Graph.registerNode(
@@ -102,64 +103,4 @@ export const register = () => {
     },
     true,
   )
-}
-
-export const behavior = (graph: Graph) => {
-
-  const clearTools = () => {
-    const nodes = graph.getNodes()
-    nodes.forEach(node => {
-      node.removeTools()
-    })
-  }
-
-  graph.on('cell:click', ({ cell }) => {
-    console.log('cell: ', cell);
-    clearTools()
-    if (cell.isNode()) {
-      // cell.addTools([
-      //   {
-      //     name: 'boundary',
-      //     args: {
-      //       attrs: {
-      //         fill: '#7c68fc',
-      //         stroke: '#333',
-      //         'stroke-width': 1,
-      //         'fill-opacity': 0.2,
-      //       },
-      //     },
-      //   },
-      //   {
-      //     name: 'button-remove',
-      //     args: {
-      //       x: 0,
-      //       y: 0,
-      //       offset: { x: 10, y: 10 },
-      //     },
-      //   },
-      // ])
-      cell.addTools({
-        name: 'sam-button',
-        args: {
-        }
-      })
-    } 
-  })
-  graph.on('blank:click', ({ e }) => {
-    console.log(e, '222');
-    
-    clearTools()
-    // cell.removeTools()
-  })
-
-  graph.on("node:move", ({ e, x, y, node, view }) => {
-    console.log('node: ', node);
-    console.log('e: ', e);
-    const oldCell = graph.createNode(node)
-
-    graph.removeConnectedEdges(node)
-    oldCell.id = 'aefafe'
-     graph.addNode(oldCell)
-     console.log('oldCell: ', oldCell);
-  });
 }

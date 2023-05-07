@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:55:56
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-02 21:31:41
+ * @LastEditTime: 2023-05-07 17:34:03
  * @FilePath: /sqlG/src/Bpmn/index.tsx
  * @Description: update here
  */
@@ -17,7 +17,6 @@ const Bpmn: FC<{ title: string }> = () => {
   const { graph, container } = useGraph()
   
   useEffect(() => {
-    console.log(graph, 'graph');
         
     if(!graph) return
     const cells: Cell[] = []

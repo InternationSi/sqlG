@@ -42,6 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/lodash": "^4.14.194",
     "@types/react": "^17.0.58",
     "@types/react-dom": "^17.0.20",
     "@umijs/lint": "^4.0.0",
@@ -60,8 +61,10 @@
     "@antv/x6": "^2.9.7",
     "@antv/x6-common": "^2.0.12",
     "@antv/x6-geometry": "^2.0.5",
+    "@antv/x6-plugin-snapline": "^2.1.7",
     "antd": "^5.4.6",
     "immer": "^9.0.21",
+    "lodash": "^4.17.21",
     "react-jss": "^10.10.0"
   }
 }

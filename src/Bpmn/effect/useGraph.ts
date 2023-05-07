@@ -2,15 +2,17 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:06:07
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-05 23:02:59
+ * @LastEditTime: 2023-05-07 17:34:20
  * @FilePath: /sqlG/src/Bpmn/effect/useGraph.ts
  * @Description: update here
  */
 
 import { useEffect, useRef, useState } from "react"
 import { Graph } from '@antv/x6'
-import { register, behavior } from "../utils"
+import { register } from "../utils"
 import { ContextMenuTool } from '../register/tools'
+import { useDrage, useTools } from "./index"
+import { Snapline } from "@antv/x6-plugin-snapline";
 
 export const useGraph = () => {
 
@@ -20,8 +22,6 @@ export const useGraph = () => {
   useEffect(() => {
     Graph.registerNodeTool('sam-button', ContextMenuTool, true)
     register()
-    console.log(container.current, 'container');
-    
     const g = new Graph({
       container: container.current,
       width: 800,
@@ -33,12 +33,24 @@ export const useGraph = () => {
         // nodeMovable: false,
       }
     })
+    g.use(
+      new Snapline({
+        enabled: true,
+      })
+    );
     setGraph(g)
-    behavior(g)
     return () => {
       g.dispose()
     }
   }, [])
+
+  useDrage({
+    graph
+  } as any)
+
+  useTools({
+    graph
+  } as any)
 
   return {
     graph,

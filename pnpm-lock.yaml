@@ -10,12 +10,18 @@ dependencies:
   '@antv/x6-geometry':
     specifier: ^2.0.5
     version: 2.0.5
+  '@antv/x6-plugin-snapline':
+    specifier: ^2.1.7
+    version: 2.1.7(@antv/x6@2.9.7)
   antd:
     specifier: ^5.4.6
     version: 5.4.6(react-dom@17.0.2)(react@17.0.2)
   immer:
     specifier: ^9.0.21
     version: 9.0.21
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   react-jss:
     specifier: ^10.10.0
     version: 10.10.0(react@17.0.2)
@@ -27,6 +33,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.1.0
     version: 17.6.1
+  '@types/lodash':
+    specifier: ^4.14.194
+    version: 4.14.194
   '@types/react':
     specifier: ^17.0.58
     version: 17.0.58
@@ -152,6 +161,14 @@ packages:
 
   /@antv/x6-geometry@2.0.5:
     resolution: {integrity: sha512-MId6riEQkxphBpVeTcL4ZNXL4lScyvDEPLyIafvWMcWNTGK0jgkK7N20XSzqt8ltJb0mGUso5s56mrk8ysHu2A==}
+    dev: false
+
+  /@antv/x6-plugin-snapline@2.1.7(@antv/x6@2.9.7):
+    resolution: {integrity: sha512-AsysoCb9vES0U2USNhEpYuO/W8I0aYfkhlbee5Kt4NYiMfQfZKQyqW/YjDVaS2pm38C1NKu1LdPVk/BBr4CasA==}
+    peerDependencies:
+      '@antv/x6': ^2.x
+    dependencies:
+      '@antv/x6': 2.9.7
     dev: false
 
   /@antv/x6@2.9.7:
@@ -2296,6 +2313,10 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 18.16.1
+    dev: true
+
+  /@types/lodash@4.14.194:
+    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
     dev: true
 
   /@types/mdast@3.0.11:
@@ -7756,7 +7777,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@2.2.0:
     resolution: {integrity: sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==}

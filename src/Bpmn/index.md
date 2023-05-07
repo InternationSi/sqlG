@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:56:57
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-02 21:23:47
+ * @LastEditTime: 2023-05-07 17:37:07
  * @FilePath: /sqlG/src/Bpmn/index.md
  * @Description: update here
 -->
@@ -14,7 +14,6 @@
 import { useRef, useEffect } from 'react';
 import { Graph } from '@antv/x6'
 import {registerEventNode  } from './register'
-import {behavior} from './utils'
 export default () => {
 
   const con = useRef();
@@ -33,7 +32,6 @@ export default () => {
       y: 160,
       shape: 'event',
     })
-    behavior(graph)
   }, [])
 
   return <div ref={con} />
