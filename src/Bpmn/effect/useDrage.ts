@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-05-07 16:11:39
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-07 17:24:22
+ * @LastEditTime: 2023-05-07 23:21:05
  * @FilePath: /sqlG/src/Bpmn/effect/useDrage.ts
  * @Description: update here
  */
@@ -17,7 +17,6 @@ interface useDragePropsType {
 export const useDrage = ({ graph }: useDragePropsType) => {
 
   useGraphMount(graph,() => {
-    console.log('graph: ', graph);
     let stageEdge: Edge<Edge.Properties>[] = [];
     graph.on('node:move', (params) => {
       const { e, x, y, node, view } = params;
@@ -50,7 +49,6 @@ export const useDrage = ({ graph }: useDragePropsType) => {
     });
 
     graph.on('node:moved', ({ e, x, y, node, view }) => {
-      console.log('是不是结束');
       graph.addEdges(stageEdge);
       graph.removeConnectedEdges('oldMoving');
       graph.removeNode('oldMoving');

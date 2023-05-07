@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 22:55:56
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-07 17:34:03
+ * @LastEditTime: 2023-05-07 23:03:31
  * @FilePath: /sqlG/src/Bpmn/index.tsx
  * @Description: update here
  */
@@ -11,6 +11,9 @@ import React, { useEffect, type FC } from 'react';
 import { useGraph } from './effect';
 import { Cell } from '@antv/x6'
 import { dataSource } from './data';
+import { GraphContext } from './utils';
+
+
 const Bpmn: FC<{ title: string }> = () => {
 
   
@@ -30,7 +33,12 @@ const Bpmn: FC<{ title: string }> = () => {
     graph.resetCells(cells)
   }, [graph])
   
-  return <div ref={container} ></div>
+  return (
+    <GraphContext.Provider value={{ graph }}>
+      <div ref={container} ></div>
+    </GraphContext.Provider>
+    )
+  
 };
 
 export default Bpmn;
