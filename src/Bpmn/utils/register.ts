@@ -2,12 +2,12 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-07 17:33:41
+ * @LastEditTime: 2023-05-09 22:44:27
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
 
-import { Graph, Shape,  } from '@antv/x6'
+import { Graph } from '@antv/x6'
 import _ from 'lodash'
 export const register = () => {
 
