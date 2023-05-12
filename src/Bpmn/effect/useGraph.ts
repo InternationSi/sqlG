@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:06:07
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-09 22:24:42
+ * @LastEditTime: 2023-05-10 21:24:05
  * @FilePath: /sqlG/src/Bpmn/effect/useGraph.ts
  * @Description: update here
  */
@@ -14,6 +14,7 @@ import { ContextMenuTool } from '../register/tools'
 import { useDrage, useTools } from "./index"
 import { Snapline } from "@antv/x6-plugin-snapline";
 import { TOOL_NAME } from "../config"
+import { regthing } from "../register"
 
 export const useGraph = () => {
 
@@ -22,6 +23,7 @@ export const useGraph = () => {
 
   useEffect(() => {
     Graph.registerNodeTool(TOOL_NAME, ContextMenuTool, true)
+    regthing()
     register()
     const g = new Graph({
       container: container.current,

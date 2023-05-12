@@ -58,6 +58,7 @@
     "stylelint": "^14.9.1"
   },
   "dependencies": {
+    "@antv/g6": "^4.8.13",
     "@antv/x6": "^2.9.7",
     "@antv/x6-common": "^2.0.12",
     "@antv/x6-geometry": "^2.0.5",

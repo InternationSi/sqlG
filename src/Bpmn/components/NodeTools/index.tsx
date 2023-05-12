@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-05-03 15:29:17
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-07 23:19:40
+ * @LastEditTime: 2023-05-10 21:29:40
  * @FilePath: /sqlG/src/Bpmn/components/NodeTools/index.tsx
  * @Description: update here
  */
@@ -12,6 +12,7 @@ import { createUseStyles } from 'react-jss';
 import { clearTools } from '../../utils';
 import EventsSvg from './EventsSvg';
 import TaskSvg from './TaskSvg';
+import { Graph, Rectangle } from '@antv/x6';
 
 const useStyles = createUseStyles({
   'tool-box': {
@@ -34,10 +35,20 @@ const useStyles = createUseStyles({
   },
 });
 
-export function NodeTools(props) {
+interface NodeToolsPropsType {
+  graph: Graph
+  rectangle: Rectangle
+}
+
+export const NodeTools: React.FC<NodeToolsPropsType> = (props) => {
   const { graph } = props;
 
-  const classes = useStyles(props.rectangle);
+  const classes = useStyles(props.rectangle as any);
+
+  const eventClick = (type: string) => {
+    console.log('type: ', type);
+    
+  }
 
   return (
     <div className={classes['tool-render']}>
@@ -48,10 +59,10 @@ export function NodeTools(props) {
           clearTools(graph);
         }}
       >
-        <span>
-          <EventsSvg />{' '}
+        <span onClick={() => eventClick('event')}>
+          <EventsSvg />
         </span>
-        <span>
+        <span onClick={() => eventClick('event')}>
           <TaskSvg />
         </span>
       </div>

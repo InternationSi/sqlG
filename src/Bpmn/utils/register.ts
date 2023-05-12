@@ -2,7 +2,7 @@
  * @Author: sfy
  * @Date: 2023-04-26 23:13:24
  * @LastEditors: sfy
- * @LastEditTime: 2023-05-09 22:44:27
+ * @LastEditTime: 2023-05-10 21:19:59
  * @FilePath: /sqlG/src/Bpmn/utils/register.ts
  * @Description: update here
  */
@@ -11,21 +11,6 @@ import { Graph } from '@antv/x6'
 import _ from 'lodash'
 export const register = () => {
 
-  Graph.registerNode(
-    'event',
-    {
-      inherit: 'circle',
-      attrs: {
-        body: {
-          strokeWidth: 2,
-          stroke: '#5F95FF',
-          fill: '#FFF',
-        },
-      },
-    },
-    true,
-  )
-  
   Graph.registerNode(
     'activity',
     {
